@@ -1,0 +1,73 @@
+# Recon-Wolf output/state — generated per run, not source
+allresults/
+
+# Loose result files if run outside allresults/ (legacy paths)
+*_live.txt
+*_hosts.txt
+*_hosts_raw_with_ports.txt
+*_hosts_with_port.txt
+*_probe_targets.txt
+*_resolved.txt
+*_bruteforced.txt
+*_permutations.txt
+*_all_subdomains.txt
+*_ports.txt
+*_urls_all.txt
+*_urls_deduped.txt
+*_js_files.txt
+*_params.txt
+*_urls_with_params.txt
+*_dalfox_xss*.txt
+*_dalfox_xss_raw.json
+*_xss_verified.txt
+*_nuclei_all.txt
+*_amass_enum.txt
+*_amass_raw.log
+*_cloud_buckets.txt
+*_waf_mapping.txt
+*_vhosts.txt
+*_subs_seen.txt
+*_subs_new_this_run.txt
+*_github_secrets_summary.txt
+*_sourcemap_findings.md
+*_internal_hosts.txt
+*_iis_hosts.txt
+*_lfi_candidates.txt
+*_lfi_fuzz_map.txt
+*_sqli_candidates.txt
+*_TRIAGE_SUMMARY.md
+*_claude_analysis_summary.md
+*_live_urls.txt
+*_new_hosts.txt
+
+# Directories the script creates
+*_urls/
+*_js_findings/
+*_ffuf_results/
+*_lfi_ffuf_results/
+*_sqlmap_results/
+*_nuclei_results/
+*_progress/
+*_claude_analysis/
+*_screenshots/
+*_github_secrets/
+*_sourcemaps/
+
+# Scope/target input files (may contain client/program info — don't leak scope)
+domains.txt
+targets.txt
+scope*.txt
+
+# Secrets scan raw output (may literally contain leaked credentials)
+*trufflehog*.json
+*gitleaks*.json
+
+# Local env / credentials
+.env
+GITHUB_TOKEN*
+*.pem
+*.key
+
+# OS/editor noise
+.DS_Store
+*.swp
