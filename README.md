@@ -42,6 +42,25 @@ Most are Go-installable via `go install github.com/<...>@latest`; run the script
 
 Also expects [SecLists](https://github.com/danielmiessler/SecLists) at `/usr/share/seclists` (override with `SECLISTS_BASE`), and optionally a local `sqlmap-dev` checkout (override with `SQLMAP_DIR`).
 
+## Install
+
+```bash
+git clone https://github.com/netclouts/recon-wolf.git
+cd recon-wolf
+chmod +x install.sh recon.sh
+./install.sh
+```
+
+`install.sh` installs everything `recon.sh` looks for: the required Go tools (subfinder, httpx, nuclei, katana, gau), the optional Go tools (dnsx, puredns, alterx, waybackurls, subjs, dalfox, gowitness, anew, notify), a handful of apt packages (ffuf, jq, dnsutils, naabu, amass, wafw00f, python3), pip-installed tools (arjun, s3scanner), and gitleaks/trufflehog via their own release/install-script paths. It skips anything already installed and re-syncs `nuclei-templates` at the end. Safe to re-run any time.
+
+It won't install Go itself (prints instructions if missing) and won't fetch SecLists automatically — see the note above for that.
+
+Make sure your Go bin path is on `PATH`:
+
+```bash
+export PATH="$PATH:$(go env GOPATH)/bin"
+```
+
 ## Usage
 
 ```bash
